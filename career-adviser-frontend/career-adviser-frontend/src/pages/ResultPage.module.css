@@ -1,0 +1,351 @@
+.page {
+  min-height: 100vh;
+  background: var(--cream);
+}
+
+/* Header */
+.header {
+  background: var(--ink);
+  color: white;
+  padding: 48px 32px 32px;
+}
+
+.headerInner {
+  max-width: 900px;
+  margin: 0 auto 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.headerLeft { flex: 1; }
+
+.headerBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(201,168,76,0.2);
+  color: var(--gold-light);
+  border: 1px solid rgba(201,168,76,0.3);
+  border-radius: 100px;
+  padding: 5px 14px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.headerName {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 12px;
+  line-height: 1.1;
+}
+
+.headerGoal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.goalLabel {
+  color: rgba(255,255,255,0.5);
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.goalValue {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--gold-light);
+}
+
+/* Score Ring */
+.ringWrap {
+  position: relative;
+  flex-shrink: 0;
+  animation: float 4s ease-in-out infinite;
+}
+
+.ringCenter {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.ringScore {
+  font-family: var(--font-display);
+  font-size: 1.8rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.ringLabel {
+  font-size: 0.7rem;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 2px;
+}
+
+/* Action Buttons */
+.actionBtns {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  gap: 12px;
+}
+
+.printBtn, .restartBtn {
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.printBtn {
+  background: rgba(255,255,255,0.1);
+  border: 1.5px solid rgba(255,255,255,0.2);
+  color: white;
+}
+.printBtn:hover { background: rgba(255,255,255,0.2); }
+
+.restartBtn {
+  background: var(--gold);
+  border: none;
+  color: var(--ink);
+}
+.restartBtn:hover { background: var(--gold-light); transform: translateY(-1px); }
+
+/* Tabs */
+.tabs {
+  background: white;
+  border-bottom: 2px solid var(--cream);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  box-shadow: var(--shadow-sm);
+}
+
+.tabList {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: none;
+  padding: 0 16px;
+  gap: 4px;
+}
+
+.tabList::-webkit-scrollbar { display: none; }
+
+.tab {
+  flex-shrink: 0;
+  padding: 14px 16px;
+  border: none;
+  background: none;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #888;
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.tab:hover { color: var(--ink); }
+.tabActive {
+  color: var(--teal) !important;
+  border-bottom-color: var(--teal) !important;
+}
+
+/* Content */
+.content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 40px 24px;
+}
+
+.fullReport {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+}
+
+/* Section */
+.section {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  border: 1.5px solid rgba(201,168,76,0.12);
+  animation: fadeUp 0.5s ease both;
+  transition: box-shadow 0.2s;
+}
+
+.section:hover { box-shadow: var(--shadow-md); }
+
+.singleSection {
+  background: white;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  border: 1.5px solid rgba(201,168,76,0.12);
+  animation: fadeUp 0.4s ease both;
+}
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 28px;
+  background: linear-gradient(135deg, var(--ink) 0%, #2a2940 100%);
+}
+
+.sectionIcon {
+  font-size: 1.6rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-display);
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  letter-spacing: 0.01em;
+}
+
+.sectionBody {
+  padding: 28px;
+  line-height: 1.8;
+  color: #333;
+}
+
+/* Markdown styling */
+.sectionBody h1, .sectionBody h2, .sectionBody h3 {
+  font-family: var(--font-display);
+  color: var(--ink);
+  margin: 20px 0 10px;
+}
+
+.sectionBody h3 {
+  font-size: 1.05rem;
+  color: var(--teal);
+  border-left: 3px solid var(--gold);
+  padding-left: 12px;
+  margin-top: 24px;
+}
+
+.sectionBody p {
+  margin-bottom: 12px;
+}
+
+.sectionBody strong {
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.sectionBody ul, .sectionBody ol {
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.sectionBody li {
+  margin-bottom: 6px;
+}
+
+.sectionBody li::marker {
+  color: var(--gold);
+}
+
+.sectionBody blockquote {
+  border-left: 4px solid var(--gold);
+  background: var(--gold-pale);
+  padding: 14px 18px;
+  border-radius: 0 10px 10px 0;
+  margin: 14px 0;
+  font-style: italic;
+  color: #666;
+}
+
+.sectionBody table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.9rem;
+}
+
+.sectionBody th {
+  background: var(--ink);
+  color: white;
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.sectionBody td {
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--cream);
+}
+
+.sectionBody tr:nth-child(even) td { background: var(--cream); }
+
+.sectionBody code {
+  background: var(--cream);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.88em;
+  color: var(--teal);
+}
+
+/* Error page */
+.errorPage {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--cream);
+  padding: 24px;
+}
+
+.errorCard {
+  background: white;
+  border-radius: 20px;
+  padding: 48px;
+  text-align: center;
+  max-width: 400px;
+  box-shadow: var(--shadow-md);
+}
+
+.errorCard h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  margin: 16px 0 8px;
+}
+
+.errorCard p {
+  color: #888;
+  font-size: 0.9rem;
+  margin-bottom: 24px;
+}
+
+/* Print */
+@media print {
+  .tabs, .actionBtns, .printBtn, .restartBtn { display: none !important; }
+  .header { background: var(--ink) !important; -webkit-print-color-adjust: exact; }
+  .sectionHeader { background: var(--ink) !important; -webkit-print-color-adjust: exact; }
+  .section, .singleSection { break-inside: avoid; }
+  .page { background: white; }
+}

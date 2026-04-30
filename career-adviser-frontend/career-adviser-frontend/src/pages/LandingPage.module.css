@@ -1,0 +1,333 @@
+.landing {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  background: var(--paper);
+}
+
+.orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  z-index: 0;
+}
+
+/* Header / Hero */
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 80px 24px 60px;
+  max-width: 800px;
+  margin: 0 auto;
+  animation: fadeUp 0.8s ease both;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--gold-pale);
+  color: #7a5e1a;
+  border: 1px solid var(--gold-light);
+  border-radius: 100px;
+  padding: 6px 16px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.title {
+  font-family: var(--font-display);
+  font-size: clamp(3rem, 8vw, 6rem);
+  font-weight: 900;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.titleLine1 {
+  color: var(--ink);
+  opacity: 0.5;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 0.55em;
+}
+
+.titleLine2 {
+  color: var(--ink);
+  position: relative;
+}
+
+.titleLine2::after {
+  content: '';
+  display: block;
+  height: 6px;
+  background: var(--gold);
+  border-radius: 3px;
+  margin-top: 4px;
+  width: 60%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.titleLine3 {
+  color: var(--teal);
+  font-size: 0.75em;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+  color: #555;
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--ink);
+  color: var(--paper);
+  border: none;
+  border-radius: 100px;
+  padding: 18px 36px;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(15,14,23,0.2);
+}
+
+.cta::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--gold);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.cta:hover::before { transform: scaleX(1); }
+.cta:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(15,14,23,0.25); }
+.cta span, .cta svg { position: relative; z-index: 1; }
+
+.trust {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  font-size: 0.85rem;
+  color: #888;
+}
+
+/* Preview Card */
+.previewWrap {
+  display: flex;
+  justify-content: center;
+  padding: 0 24px 80px;
+  position: relative;
+  z-index: 1;
+}
+
+.previewCard {
+  background: white;
+  border: 1.5px solid rgba(201,168,76,0.3);
+  border-radius: 20px;
+  box-shadow: var(--shadow-lg), 0 0 0 8px rgba(201,168,76,0.05);
+  width: 100%;
+  max-width: 480px;
+  overflow: hidden;
+  animation: float 5s ease-in-out infinite;
+}
+
+.previewHeader {
+  background: var(--ink);
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.previewDots {
+  display: flex;
+  gap: 6px;
+}
+
+.previewDots span {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  display: block;
+}
+
+.previewTitle {
+  font-size: 0.75rem;
+  color: rgba(255,255,255,0.5);
+}
+
+.previewBody {
+  padding: 24px;
+}
+
+.previewRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.previewLabel {
+  font-size: 0.8rem;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.previewValue {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.previewScore {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--teal);
+}
+
+.progressBar {
+  height: 8px;
+  background: var(--cream);
+  border-radius: 4px;
+  margin: 8px 0 16px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--teal), var(--gold));
+  border-radius: 4px;
+  transition: width 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.previewTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.previewTags span {
+  background: var(--teal-pale);
+  color: var(--teal);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 4px 12px;
+  border-radius: 100px;
+}
+
+/* Features */
+.features {
+  position: relative;
+  z-index: 1;
+  padding: 0 24px 80px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.featuresTitle {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  text-align: center;
+  margin-bottom: 48px;
+  color: var(--ink);
+}
+
+.featuresTitle em {
+  font-style: italic;
+  color: var(--teal);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.featureCard {
+  background: white;
+  border: 1.5px solid rgba(201,168,76,0.2);
+  border-radius: var(--radius);
+  padding: 28px;
+  transition: transform 0.25s, box-shadow 0.25s, border-color 0.25s;
+  animation: fadeUp 0.6s ease both;
+}
+
+.featureCard:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--gold);
+}
+
+.featureIcon {
+  font-size: 2.2rem;
+  margin-bottom: 14px;
+}
+
+.featureCard h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: var(--ink);
+}
+
+.featureCard p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Bottom CTA */
+.bottomCta {
+  position: relative;
+  z-index: 1;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.bottomCta h2 {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 12px;
+}
+
+.bottomCta p {
+  color: rgba(255,255,255,0.6);
+  font-size: 1.1rem;
+  margin-bottom: 32px;
+}
+
+.bottomCta .cta {
+  background: var(--gold);
+  color: var(--ink);
+  box-shadow: 0 4px 20px rgba(201,168,76,0.4);
+}
+
+.bottomCta .cta::before {
+  background: var(--gold-light);
+}
